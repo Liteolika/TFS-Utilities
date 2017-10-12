@@ -1,0 +1,61 @@
+{
+  "id": "120F4F0C-74EC-4487-B13E-C3C79E55A211",
+  "name": "JsonTokenReplacement",
+  "friendlyName": "ms-resource:loc.friendlyName",
+  "description": "ms-resource:loc.description",
+  "helpMarkDown": "ms-resource:loc.helpMarkDown",
+  "category": "Utility",
+  "visibility": [
+    "Build"
+  ],
+  "author": "Peter Carlsson",
+  "version": {
+    "Major": 0,
+    "Minor": 2,
+    "Patch": 0
+  },
+  "demands": [
+    "DotNetFramework"
+  ],
+  "groups": [
+    {
+      "name": "advanced",
+      "displayName": "ms-resource:loc.group.displayName.advanced",
+      "isExpanded": false
+    }
+  ],
+  "inputs": [
+    {
+      "name": "jsonFilePath",
+      "type": "filePath",
+      "label": "ms-resource:loc.input.label.jsonFilePath",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": ""
+    },
+    {
+      "name": "tokenPath",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.tokenPath",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "ms-resource:loc.input.help.tokenPath"
+    },
+    {
+      "name": "tokenValue",
+      "type": "string",
+      "label": "ms-resource:loc.input.label.tokenValue",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "ms-resource:loc.input.help.tokenValue"
+    }
+  ],
+  "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\JsonTokenReplacement.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}

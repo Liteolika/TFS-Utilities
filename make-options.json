@@ -1,0 +1,22 @@
+{
+    "tasks": [
+      "JsonTokenReplacement"
+    ],
+    "taskResources": [
+      "*.ps1",
+      "*.psd1",
+      "*.psm1",
+      "*.sh",
+      "*.txt",
+      "icon.png",
+      "icon.svg",
+      "module.json",
+      "node_modules",
+      "package.json",
+      "vss-extension.json",
+      "Strings",
+      "task.json",
+      "task.loc.json",
+      "Tests"
+    ]
+  }
