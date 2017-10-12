@@ -1,0 +1,12 @@
+{
+  "loc.friendlyName": "Deploy to IIS",
+  "loc.helpMarkDown": "[More Information](https://github.com/Liteolika/TFS-Utilities)",
+  "loc.description": "Deploys a website to IIS.",
+  "loc.instanceNameFormat": "Replace token in JSON-file",
+  "loc.group.displayName.advanced": "Advanced",
+  "loc.input.label.jsonFilePath": "Path to JSON file",
+  "loc.input.label.tokenPath": "Path to token",
+  "loc.input.help.tokenPath": "The name of the prerelease. Will be included in the AssemblyInformationalVersion-attribute like 1.2.3-abc.",
+  "loc.input.label.tokenValue": "New token value",
+  "loc.input.help.tokenValue": "The name of the prerelease. Will be included in the AssemblyInformationalVersion-attribute like 1.2.3-abc."
+}
