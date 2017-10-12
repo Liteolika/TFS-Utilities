@@ -1,6 +1,6 @@
 {
     "id": "120F4F0C-74EC-4487-B13E-C3C79E55A211",
-    "name": "Deploy to IIS",
+    "name": "DeployToIIS",
     "friendlyName": "Deploy to IIS",
     "description": "Deploys a website to IIS.",
     "helpMarkDown": "[More Information](https://github.com/Liteolika/TFS-Utilities)",
