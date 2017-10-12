@@ -1,0 +1,62 @@
+{
+    "id": "120F4F0C-74EC-4487-B13E-C3C79E55A211",
+    "name": "Deploy to IIS",
+    "friendlyName": "Deploy to IIS",
+    "description": "Deploys a website to IIS.",
+    "helpMarkDown": "[More Information](https://github.com/Liteolika/TFS-Utilities)",
+    "category": "Utility",
+    "visibility": [
+                  "Build"
+                  ],    
+    "author": "Peter Carlsson",
+    "version": {
+        "Major": 0,
+        "Minor": 2,
+        "Patch": 0
+    },
+    "demands": [
+        "DotNetFramework"
+    ],
+    "groups": [
+        {
+            "name": "advanced",
+            "displayName": "Advanced",
+            "isExpanded": false
+        }
+    ],
+    "inputs": [
+        { 
+            "name": "jsonFilePath", 
+            "type": "filePath",
+            "label": "Path to JSON file", 
+            "defaultValue": "", 
+            "required": true,
+            "helpMarkDown": ""
+        },
+        { 
+            "name": "tokenPath", 
+            "type": "string", 
+            "label": "Path to token", 
+            "defaultValue": "", 
+            "required": true,
+            "helpMarkDown": "The name of the prerelease. Will be included in the AssemblyInformationalVersion-attribute like 1.2.3-abc."
+        },
+        { 
+            "name": "tokenValue", 
+            "type": "string", 
+            "label": "New token value", 
+            "defaultValue": "", 
+            "required": true,
+            "helpMarkDown": "The name of the prerelease. Will be included in the AssemblyInformationalVersion-attribute like 1.2.3-abc."
+        }
+        
+    ],
+    "instanceNameFormat": "Replace token in JSON-file",
+    "execution": {
+        "PowerShell": {
+            "target": "$(currentDirectory)\\websitedeploy.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
+        }
+    }
+}

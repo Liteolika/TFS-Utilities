@@ -1,6 +1,7 @@
 {
     "tasks": [
-      "JsonTokenReplacement"
+      "JsonTokenReplacement",
+      "DeployToIIS"
     ],
     "taskResources": [
       "*.ps1",
