@@ -1,0 +1,80 @@
+{
+    "manifestVersion": 1,
+    "id": "TFS-Utilities",
+    "name": "Liteolika Utilities",
+    "version": "0.0.1",
+    "publisher": "Liteolika-Mediaproduktion",
+    "targets": [
+        {
+          "id": "Microsoft.VisualStudio.Services"
+        }
+      ],
+      "scopes": [
+        "vso.build",
+        "vso.serviceendpoint"
+      ],
+      "description": "A build and release extension that allows you to publish source files to a DocumentDB instance in Azure.",
+      "categories": [
+        "Build and release"
+      ],
+      "tags": [
+        "Extension",
+        "Marketplace",
+        "Publish",
+        "Json",
+        "Deployment",
+        "IIS"
+      ],
+      "links": {
+        "support": {
+          "uri": "https://github.com/Liteolika/TFS-Utilities"
+        }
+      },
+      "content":{
+        "details":{
+          "path":"overview.md"
+        }
+      },
+      "branding": {
+        "color": "rgb(36, 43, 50)",
+        "theme": "dark"
+      },
+      "icons": {
+        "default": "images/icon.png",
+        "large":"images/icon-large.png"
+      },
+      "files": [
+        {
+          "path": "JsonTokenReplacement"
+        },
+        {
+            "path": "DeployToIIS"
+        },
+        {
+          "path":"images",
+          "addressable": true
+        }
+      ],
+      "contributions": [
+        {
+          "id": "4b2a2f70-3488-41b0-9625-6f7f6e798293",
+          "type": "ms.vss-distributed-task.task",
+          "targets": [
+            "ms.vss-distributed-task.tasks"
+          ],
+          "properties": {
+            "name": "DeployToIIS"
+          }
+        },
+        {
+            "id": "442e59fb-a9a4-4de9-ad0f-d1e81a0e635e",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+              "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+              "name": "JsonTokenReplacement"
+            }
+          }
+      ]
+}

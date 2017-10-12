@@ -1,6 +1,6 @@
 {
-  "id": "442e59fb-a9a4-4de9-ad0f-d1e81a0e635e",
-  "name": "JsonTokenReplacement",
+  "id": "4b2a2f70-3488-41b0-9625-6f7f6e798293",
+  "name": "DeployToIIS",
   "friendlyName": "ms-resource:loc.friendlyName",
   "description": "ms-resource:loc.description",
   "helpMarkDown": "ms-resource:loc.helpMarkDown",
@@ -53,7 +53,7 @@
   "instanceNameFormat": "ms-resource:loc.instanceNameFormat",
   "execution": {
     "PowerShell": {
-      "target": "$(currentDirectory)\\JsonTokenReplacement.ps1",
+      "target": "$(currentDirectory)\\websitedeploy.ps1",
       "argumentFormat": "",
       "workingDirectory": "$(currentDirectory)"
     }

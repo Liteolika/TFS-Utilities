@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node make.js build",
     "test": "nyc ./node_modules/.bin/ava -v",
-    "package": "node make.js package",
+    "package": "node make.js bump && node make.js package",
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
     "standard": "standard index.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"

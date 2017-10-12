@@ -85,6 +85,8 @@ else {
     taskList = JSON.parse(fs.readFileSync(path.join(__dirname, 'make-options.json'))).tasks;
 }
 
+
+
 target.clean = function () {
     rm('-Rf', path.join(__dirname, '_build'));
     mkdir('-p', buildPath);
@@ -228,6 +230,17 @@ target.build = function() {
         copyTaskResources(taskMake, taskPath, outDir);
         cp(path.join(__dirname, 'docs', taskDef.name + '.md'), outDir + '/overview.md');
 
+        // copy images
+        var imagePath = path.join(buildPath, 'images');
+        mkdir("-p", imagePath);
+        ensureExists(imagePath);
+        cp('-f', path.join(__dirname, 'images/*.*'), imagePath);
+
+        // copy manifest to build
+        console.log();
+        console.log("> copying extension resources");
+        cp('-f', path.join(__dirname, "vss-extension.json"), buildPath + "/vss-extension.json");
+        cp('-f', path.join(__dirname, "overview.md"), buildPath + "/overview.md");
 
     });
 
@@ -239,7 +252,10 @@ target.package = function() {
     rm('-Rf', packagePath);
     target.build();
 
-    var outdir
+    mkdir("-p", packagePath);
+    ensureExists(packagePath);
+
+    /* var outdir
     taskList.forEach(function (taskName) {
         banner('Packaging: ' + taskName);
 
@@ -257,10 +273,15 @@ target.package = function() {
             packageDir = path.join(packagePath, taskDef.name);
             mkdir('-p', packageDir);
             cd(buildDir);
-            run('tfx extension create --output-path "'+packageDir+'"');
+            //run('tfx extension create --output-path "'+packageDir+'"');
 
         }
-    });
+    }); */
+
+    cd(buildPath);
+    run('tfx extension create --manifest-globs vss-extension.json --output-path "' + packagePath + '"');
+    // --output-path "' + "" + '"'
+
 }
 
 // used to bump the patch version in task.json files
