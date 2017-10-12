@@ -1,6 +1,6 @@
 {
   "name": "Liteolika.TFS.Utilities",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-semanticly-released",
   "description": "Agent tasks for TFS",
   "main": "gulpfile.js",
   "directories": {
@@ -11,7 +11,8 @@
     "test": "nyc ./node_modules/.bin/ava -v",
     "package": "node make.js package",
     "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
-    "standard": "standard index.js"
+    "standard": "standard index.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
