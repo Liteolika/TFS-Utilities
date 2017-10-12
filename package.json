@@ -1,6 +1,6 @@
 {
   "name": "Liteolika.TFS.Utilities",
-  "version": "0.0.1",
+  "version": "0.0.0-semantically-released",
   "description": "Agent tasks for TFS",
   "main": "gulpfile.js",
   "directories": {
@@ -45,7 +45,8 @@
     "codecov": "^1.0.1",
     "ghooks": "^1.2.4",
     "nyc": "^10.0.0",
-    "standard": "^8.4.0"
+    "standard": "^8.4.0",
+    "semantic-release": "^8.0.3"
   },
   "dependencies": {},
   "config": {

@@ -5,4 +5,9 @@ node_js:
 script: 
   - npm run build
 after_success:
-  - npm run report-coverage
+# - npm run report-coverage
+#  - npm run semantic-release
+
+branches:
+  only:
+    - master
