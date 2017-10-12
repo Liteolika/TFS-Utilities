@@ -1,46 +1,56 @@
 {
-    "name": "Liteolika.TFS.Utilities",
-    "version": "0.0.1",
-    "description": "Agent tasks for TFS",
-    "main": "gulpfile.js",
-    "directories": {
-        "doc": "docs"
-    },
-    "scripts": {
-        "build": "node make.js build",
-        "test": "node make.js test",
-        "package": "node make.js package"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Liteolika/TFS-Utilities"
-    },
-    "author": {
-        "name": "Peter Carlsson",
-        "email": "peter@liteolika.se"
-    },
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Liteolika/TFS-Utilities/issues"
-    },
-    "homepage": "https://github.com/Liteolika/TFS-Utilities",
-    "devDependencies": {
-        "adm-zip": "0.4.7",
-        "gulp": "3.9.0",
-        "gulp-util": "3.0.4",
-        "minimatch": "3.0.2",
-        "minimist": "1.1.1",
-        "mocha": "2.3.3",
-        "q": "1.4.1",
-        "semver": "4.3.3",
-        "shelljs": "^0.3.0",
-        "sync-request": "3.0.1",
-        "typescript": "1.8.7",
-        "validator": "3.33.0",
-        "node-uuid": "1.4.6"
-    },
-    "dependencies": {
-        
+  "name": "Liteolika.TFS.Utilities",
+  "version": "0.0.1",
+  "description": "Agent tasks for TFS",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "node make.js build",
+    "test": "nyc ./node_modules/.bin/ava -v",
+    "package": "node make.js package",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "standard": "standard index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Liteolika/TFS-Utilities"
+  },
+  "author": {
+    "name": "Peter Carlsson",
+    "email": "peter@liteolika.se"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Liteolika/TFS-Utilities/issues"
+  },
+  "homepage": "https://github.com/Liteolika/TFS-Utilities",
+  "devDependencies": {
+    "adm-zip": "0.4.7",
+    "gulp": "3.9.0",
+    "gulp-util": "3.0.4",
+    "minimatch": "3.0.2",
+    "minimist": "1.1.1",
+    "mocha": "2.3.3",
+    "q": "1.4.1",
+    "semver": "4.3.3",
+    "shelljs": "^0.3.0",
+    "sync-request": "3.0.1",
+    "typescript": "1.8.7",
+    "validator": "3.33.0",
+    "node-uuid": "1.4.6",
+    "ava": "^0.16.0",
+    "co-exec": "^1.0",
+    "codecov": "^1.0.1",
+    "ghooks": "^1.2.4",
+    "nyc": "^10.0.0",
+    "standard": "^8.4.0"
+  },
+  "dependencies": {},
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run standard"
     }
-
+  }
 }
