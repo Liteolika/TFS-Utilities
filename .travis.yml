@@ -3,6 +3,6 @@ language: node_js
 node_js:
   - stable
 script: 
-  - npm build
+  - npm run build
 after_success:
   - npm run report-coverage
